@@ -6,6 +6,7 @@ import java.util.Arrays;
 import circus.stuff.Equipment;
 import circus.stuff.Cannon;
 import circus.stuff.Ladder;
+import circus.stuff.Cage;
 
 import circus.animal.Animal;
 import circus.animal.Duck;
@@ -47,18 +48,6 @@ public class Circus {
     }
 
     public static void main(String[] args) {
-//        makeAnimalsTalk();
-//        System.out.println("Total value of animals " + calculateAssetValue(animals));
-//        System.out.println("Total value of equipments " + calculateAssetValue(equipments));
-//        System.out.println("Numbers of animals in circus: " + animals.length);
-//        for (Animal a: animals) {
-//            System.out.println(a);
-//        }
-        //animals[3] = new Elephant("Strong one");
-//        System.out.println("Numbers of animals in circus: " + animals.length);
-//        for (Animal a: animals) {
-//            System.out.println(a);
-//        }
         ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(animals));
         printNumberOfAnimals(animalArrayList);
         animalArrayList.add(new Elephant("strong one"));
@@ -80,6 +69,21 @@ public class Circus {
 
         Animal candidate = findAnimal(animalArrayList,"Polly");
         System.out.println("Polly is at index: " + animalArrayList.indexOf(candidate));
+
+        Cage<Duck> duckCage = new Cage<>();
+        Duck duck = new Duck("louei");
+        duckCage.lockUp(duck);
+        Parrot parrot = new Parrot("blue");
+        Cage<Parrot> parrotCage = new Cage<>();
+        parrotCage.lockUp(parrot);
+
+        ArrayList<Cage> cages = new ArrayList<>();
+        cages.add(duckCage);
+        cages.add(parrotCage);
+
+        for(Cage c: cages) {
+            c.release();
+        }
     }
 
     private static void printNumberOfAnimals(ArrayList<Animal> animalArrayList) {
