@@ -1,5 +1,8 @@
 package circus;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import circus.stuff.Equipment;
 import circus.stuff.Cannon;
 import circus.stuff.Ladder;
