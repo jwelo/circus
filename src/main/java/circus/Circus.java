@@ -52,3 +52,8 @@ public class Circus {
         System.out.println("Total value of equipments " + calculateAssetValue(equipments));
     }
 }
+
+
+    private static void printNumberOfAnimals(ArrayList<Animal> animalArrayList) {
+        System.out.println("numbers of aniamls in circus (AL)" + animalArrayList.size());
+    }
